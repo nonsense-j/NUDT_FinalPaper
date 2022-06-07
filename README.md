@@ -1,6 +1,6 @@
 # NUDT本科论文Latex模版
 
-provided by nonsense。
+provided by nonsense(2018 Software Engineering).
 
 本项目基于学长学姐给出的硕博论文模版进行修改。编译方式如下：
 
