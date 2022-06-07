@@ -1,0 +1,37 @@
+% TeX
+\chapter{关键算法的代码实现}
+
+\section{算法的Python代码实现}
+
+\begin{lstlisting}[language={Python}]
+    def Generate_SCC(r):
+        global G, index, S, DFN, Low, Color
+        DFN[r] = index
+        Low[r] = index
+        index += 1
+        S.append(r)
+        Color[r] = 'grey'
+        for tran in Depmap[r]:
+            rj = tran[1]
+            if Color[rj] == 'white':
+                Generate_SCC(rj)
+                Low[r] = min(Low[r], Low[rj])
+            elif Color[rj] == 'grey':
+                Low[r] = min(Low[r], DFN[rj])
+        if Low[r] == DFN[r]:
+            Vi = []
+            while True:
+                rs = S.pop()
+                Color[rs] = 'black'
+                Vi.append(rs)
+                if rs == r:
+                    break
+            Gi = dict.fromkeys(Vi)
+            for rx in Vi:
+                Gi[rx] = []
+            for rx in Vi:
+                for tranx in Depmap[rx]:
+                    if tranx[1] in Vi:
+                        Gi[rx].append(tranx)
+            G.append(Gi)   
+\end{lstlisting}

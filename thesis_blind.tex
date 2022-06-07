@@ -1,0 +1,163 @@
+%%
+%% This is file `thesis.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% nudtpaper.dtx  (with options: `thesis')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2018 by TomHeaven <hanlin_tan@nudt.edu.cn>
+%% 
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3a
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in:
+%% 
+%% http://www.latex-project.org/lppl.txt
+%% 
+%% and version 1.3a or later is part of all distributions of LaTeX
+%% version 2004/10/01 or later.
+%% 
+%% To produce the documentation run the original source files ending with `.dtx'
+%% through LaTeX.
+%% 
+%% Thanks LiuBenYuan <liubenyuan@gmail.com> for maintainence.
+%% Thanks Xue Ruini <xueruini@gmail.com> for the thuthesis class!
+%% Thanks sofoot for the original NUDT paper class!
+%% 
+%1. 规范硕士导言
+% \documentclass[master,ttf]{nudtpaper}
+%2. 规范博士导言
+% \documentclass[doctor,twoside,ttf]{nudtpaper}
+%3. 如果使用是Vista
+% \documentclass[master,ttf,vista]{nudtpaper}
+%4. 建议使用OTF字体获得较好的页面显示效果
+%   OTF字体从网上获得，各个系统名称统一，不用加vista选项
+%   如果你下载的是最新的(1201)OTF英文字体，建议修改nudtpaper.cls，使用
+%   Times New Roman PS Std
+% \documentclass[doctor,twoside,otf]{nudtpaper}
+%   另外，新版的论文模板提供了方正字体选项FZ，效果也不错哦
+% \documentclass[doctor,twoside,fz]{nudtpaper}
+%5. 如果想生成盲评，传递anon即可，仍需修改个人成果部分
+% \documentclass[master,otf,anon]{nudtpaper}
+%
+\documentclass[doctor,ttf,twoside,anon]{nudtpaper}
+%\usepackage{lmodern} % 这个包导致英文字体与Word的渲染效果不一致，故去掉
+\usepackage{mynudt}
+\usepackage{multirow,array,makecell}
+\usepackage{fix-cm}
+\usepackage{hyperref}
+%\usepackage{autobreak}
+\usepackage{stmaryrd}
+\usepackage[ruled,linesnumbered,vlined,algochapter]{algorithm2e}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, fit, shapes}
+\newcommand{\Bullet}{{\fontsize{6pt}{6pt}\selectfont\CircleSolid}}
+\newcommand\cox{%
+        \mathrel{\text{\raisebox{.7ex}{\tikz[baseline] \draw (0,0) circle (1ex) (0ex,1ex) -- (-1ex,0ex) (-1ex,0ex) -- (0ex,-1ex) (0ex,-1ex) -- (1ex,0ex) (1ex,0ex) -- (0ex,1ex);}%
+}}}
+\newcommand\coxe{%
+        \mathrel{\text{\raisebox{.7ex}{\tikz[baseline] \draw (0,0) circle (1ex) (0.707ex,0.707ex) -- (-0.707ex,0.707ex) (-0.707ex,0.707ex) -- (-0.707ex,-0.707ex) (-0.707ex,-0.707ex) -- (0.707ex,-0.707ex) (0.707ex,-0.707ex) -- (0.707ex,0.707ex);}%
+}}}
+\newcommand\Future{%
+        \mathrel{\text{\raisebox{.7ex}{\tikz[baseline] \draw (0ex,1ex) -- (-1ex,0ex) (-1ex,0ex) -- (0ex,-1ex) (0ex,-1ex) -- (1ex,0ex) (1ex,0ex) -- (0ex,1ex);}%
+}}}
+\newcommand\Global{%
+        \mathrel{\text{\raisebox{.7ex}{\tikz[baseline] \draw (0.707ex,0.707ex) -- (-0.707ex,0.707ex) (-0.707ex,0.707ex) -- (-0.707ex,-0.707ex) (-0.707ex,-0.707ex) -- (0.707ex,-0.707ex) (0.707ex,-0.707ex) -- (0.707ex,0.707ex);}%
+}}}
+\newcommand\Next{%
+        \mathrel{\text{\raisebox{.7ex}{\tikz[baseline] \draw (0,0) circle (1ex);}%
+}}}
+\newcommand\Previous{%
+        \mathrel{\text{\raisebox{.7ex}{\tikz[baseline] \draw (0,0) circle (1ex) (-0.65ex,0ex) -- (0.65ex,0ex);}%
+}}}
+\newcommand\Once{%
+        \mathrel{\text{\raisebox{.7ex}{\tikz[baseline] \draw (0ex,1ex) -- (-1ex,0ex) (-1ex,0ex) -- (0ex,-1ex) (0ex,-1ex) -- (1ex,0ex) (1ex,0ex) -- (0ex,1ex) (-0.65ex,0ex) -- (0.65ex,0ex);}%
+}}}
+\newcommand\Historical{%
+        \mathrel{\text{\raisebox{.7ex}{\tikz[baseline] \draw (0.707ex,0.707ex) -- (-0.707ex,0.707ex) (-0.707ex,0.707ex) -- (-0.707ex,-0.707ex) (-0.707ex,-0.707ex) -- (0.707ex,-0.707ex) (0.707ex,-0.707ex) -- (0.707ex,0.707ex) (-0.65ex,0ex) -- (0.65ex,0ex);}%
+}}}
+
+\classification{TP301.2}
+\serialno{17069032}
+\confidentiality{公开}
+\UDC{004.41}
+\title{面向不可综合规约的无人系统控制程序\\自动生成方法研究}
+\displaytitle{面向不可综合规约的无人系统控制程序自动生成方法研究}
+\author{史浩}
+\zhdate{\zhtoday}
+\entitle{Automatic Generation of Control Program for Unmanned System with Unsynthesizable Specifications}
+\enauthor{Hao Shi}
+\endate{\entoday}
+\subject{软件工程}
+\ensubject{Software Engineering}
+\researchfield{高可信软件技术}
+\supervisor{董威\quad{}教授}
+\cosupervisor{}  % 协助指导教师，没有就空着
+\ensupervisor{Prof. Wei Dong}
+\encosupervisor{} % 协助指导教师英文，没有就空着
+\papertype{工学}
+\enpapertype{Engineering}
+% 加入makenomenclature命令可用nomencl制作符号列表。
+
+\begin{document}
+	\graphicspath{{figures/}}
+	% 制作封面，生成目录，插入摘要，插入符号列表 \\
+	% 默认符号列表使用denotation.tex，如果要使用nomencl \\
+	% 需要注释掉denotation，并取消下面两个命令的注释。 \\
+	% cleardoublepage% \\
+	% printnomenclature% \\
+	\maketitle
+	\frontmatter
+	\tableofcontents
+	\listoftables
+	\listoffigures
+	
+	\midmatter
+	\input{data/abstract}
+	\input{data/denotation}
+	
+	%书写正文，可以根据需要增添章节; 正文还包括致谢，参考文献与成果
+	\mainmatter
+	\renewcommand\UrlFont{\timesnr}
+	\makeatletter
+	\newcounter{blankpages}
+	\def\cleardoublepage{%
+		\clearpage
+		\if@twoside
+		\ifodd\c@page
+		\else
+		\hbox{}\newpage\stepcounter{blankpages}%
+		\thispagestyle{empty}%
+		\if@twocolumn\hbox{}\newpage\fi
+		\fi
+		\fi
+	}
+	\newcommand{\@romannoblank}[1]{%
+		\@roman{\numexpr#1-\value{blankpages}\relax}%
+	}
+	\makeatother
+	
+	\input{data/chap01}
+	\input{data/chap02}
+	\input{data/chap03}
+	\input{data/chap04}
+	\input{data/chap05}
+	\input{data/chap06}
+	\input{data/ack_blind}
+	
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{参考文献}
+	\bibliographystyle{bstutf8}
+	\bibliography{ref/refs}
+	
+	\input{data/resume_blind}
+	% 最后，需要的话还要生成附录，全文随之结束。
+	\appendix
+	\backmatter
+	\input{data/appendix01}
+	
+\end{document}

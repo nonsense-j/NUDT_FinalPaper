@@ -1,0 +1,102 @@
+%%
+%% This is file `thesis.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% nudtpaper.dtx  (with options: `thesis')
+%% 
+%% This is a generated file.
+%% 
+%% Copyright (C) 2018 by TomHeaven <hanlin_tan@nudt.edu.cn>
+%% 
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3a
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in:
+%% 
+%% To produce the documentation run the original source files ending with `.dtx'
+%% through LaTeX.
+%% 
+%% Thanks LiuBenYuan <liubenyuan@gmail.com> for maintainence.
+%% Thanks Xue Ruini <xueruini@gmail.com> for the thuthesis class!
+%% Thanks sofoot for the original NUDT paper class!
+%% 
+% 只适用于本科毕设论文
+%
+\documentclass[bachelor,ttf]{nudtpaper}
+\usepackage{mynudt}
+\usepackage{multirow,array,makecell}
+\usepackage{fix-cm}
+\usepackage{hyperref}
+%\usepackage{autobreak}
+\usepackage{stmaryrd}
+\usepackage[ruled,linesnumbered,vlined,algochapter]{algorithm2e}
+\usepackage{tikz}
+\usepackage{listing}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{pifont}
+\DeclareCaptionLabelSeparator{colon}{-}
+
+% 设置公式的编号为短杠形式
+\usepackage{mathtools}
+\newtagform{test}{\hspace{-2em}公式（}{）\qquad}
+\newtagform{long}{公式（}{）\qquad}
+\usetagform{test}
+\renewcommand\theequation{%
+  \thechapter-\arabic{equation}}
+% 设置图, 表的编号为短杠形式
+\renewcommand\thefigure{\arabic{chapter}-\arabic{figure}}
+\renewcommand\thetable{\arabic{chapter}-\arabic{table}}
+\renewcommand\thedefinition{\arabic{chapter}-\arabic{definition}}
+\renewcommand\theexample{\arabic{chapter}-\arabic{example}}
+\renewcommand\thetheorem{\arabic{chapter}-\arabic{theorem}}
+\renewcommand\thealgocf{\arabic{chapter}-\arabic{algocf}}
+
+\begin{document}
+	\graphicspath{{figures/}}
+
+\frontmatter
+\tableofcontents
+
+\midmatter
+\input{data/abstract}
+
+%书写正文，可以根据需要增添章节; 正文还包括致谢，参考文献与成果
+\mainmatter
+\renewcommand\UrlFont{\timesnr}
+\makeatletter
+\newcounter{blankpages}
+\def\cleardoublepage{%
+	\clearpage
+	\if@twoside
+	\ifodd\c@page
+	\else
+	\hbox{}\newpage\stepcounter{blankpages}%
+	\thispagestyle{empty}%
+	\if@twocolumn\hbox{}\newpage\fi
+	\fi
+	\fi
+}
+\newcommand{\@romannoblank}[1]{%
+	\@roman{\numexpr#1-\value{blankpages}\relax}% 
+}
+\makeatother
+\input{data/chap001}
+% \input{data/chap002}
+% \input{data/summary}
+\input{data/ack}
+
+\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}
+\bibliographystyle{bstutf8}
+\bibliography{ref/refs}
+
+%\input{data/reviewinfo} %公开评阅信息
+% 最后，需要的话还要生成附录，全文随之结束。
+% \appendix
+% \backmatter
+% \input{data/appendix01}
+
+\end{document}
