@@ -282,19 +282,19 @@
 }
 \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti \xiaosi[1.25]}
     {第{\hzx\thecontentslabel}章\quad}{}
-    {\hspace{.5em}\titlerule*{.}\contentspage}
+    {\hspace{.5em}\titlerule*{\hzx…}\contentspage}
 \titlecontents{section}[2em]{\songti \xiaosi[1.25]}
     {\hzx\thecontentslabel\quad}{}
-    {\hspace{.5em}\titlerule*{.}\contentspage}
+    {\hspace{.5em}\titlerule*{\hzx…}\contentspage}
 \titlecontents{subsection}[4em]{\songti \xiaosi[1.25]}
     {\hzx\thecontentslabel\quad}{}
-    {\hspace{.5em}\titlerule*{.}\contentspage}
+    {\hspace{.5em}\titlerule*{\hzx…}\contentspage}
 \titlecontents{figure}[0pt]{\songti \xiaosi[1.25]}
     {\makebox[3.5em][l]{图~\thecontentslabel\quad}}{}
-    {\hspace{.5em}\titlerule*{.}\contentspage}
+    {\hspace{.5em}\titlerule*{\hzx…}\contentspage}
 \titlecontents{table}[0pt]{\songti \xiaosi[1.25]}
     {\makebox[3.5em][l]{表~\thecontentslabel\quad}}{}
-    {\hspace{.5em}\titlerule*{.}\contentspage}
+    {\hspace{.5em}\titlerule*{\hzx…}\contentspage}
 \renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
                     \thispagestyle{plain}%
                     \global\@topnum\z@
