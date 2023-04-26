@@ -85,25 +85,27 @@
 \RequirePackage[numbers,sort&compress,square]{natbib}
 \RequirePackage[colorlinks=true,linkcolor=blue,citecolor=red,pdfborder=0 1 1]{hyperref}
 \RequirePackage{datetime}
+% \RequirePackage[titles]{tocloft}
 \defaultfontfeatures{Mapping=tex-text}
 \xeCJKsetcharclass{"0}{"2E7F}{0}
 \xeCJKsetcharclass{"2E80}{"FFFF}{1}
 
 % ttf字体 (Windows)
-  \newcommand{\installttf}{
+  \newcommand{\installttf} {
     %%%%   Thesis Fonts
     \setmainfont{Times New Roman}
     % \setsansfont{Arial}
     \setsansfont{Times New Roman}
     \setmonofont{Courier New}
+    \newfontfamily\hzx[Path=font/]{FangSong_GB2312.ttf}
     %%%% Using Office Family Fonts
-    \setCJKmainfont[BoldFont={STZhongsong}]{SimSun}
-    \setCJKsansfont{SimHei} % Hei
-    \setCJKmonofont{FangSong_GB2312} % Fangsong
+    \setCJKmainfont[Path=font/, BoldFont={STZhongsong.ttf}]{SimSun.ttc}
+    \setCJKsansfont[Path=font/]{SimHei.ttf} % Hei
+    \setCJKmonofont[Path=font/]{FangSong_GB2312.ttf} % Fangsong
     %%%% alias
-    \setCJKfamilyfont{song}{SimSun}
-    \setCJKfamilyfont{hei}{SimHei}
-    \setCJKfamilyfont{fs}{FangSong_GB2312} % fang-song
+    \setCJKfamilyfont{song}[Path=font/]{SimSun.ttc}
+    \setCJKfamilyfont{hei}[Path=font/]{SimHei.ttf}
+    \setCJKfamilyfont{fs}[Path=font/]{FangSong_GB2312.ttf} % fang-song
     \setCJKfamilyfont{kai}{KaiTi} % Kai
     \setCJKfamilyfont{times}{Times New Roman} % times
 }
@@ -229,23 +231,23 @@
 \def\CJK@today{\zhdigits{\the\year}年\zhnumber{\the\month}月}
 \renewcommand\zhtoday{\CJK@today}
 \newcommand\entoday{\monthname{}, \the\year}
-\geometry{top=21mm,bottom=25.5mm,left=30mm,right=30mm}
-\geometry{headheight=9mm,headsep=1mm,footskip=9mm}
+\geometry{a4paper,top=25mm,bottom=25mm,left=30mm,right=30mm}
+\geometry{includehead=True,includefoot=True,headheight=5mm,headsep=1mm,footskip=6mm}
 \renewcommand\setheadrule[1]{%
   \ifdim#1=\z@
     \let\makeheadrule\@empty
   \else
     \def\makeheadrule{%
-    \makebox[0pt][l]{\rule[.2\baselineskip]{\linewidth}{1.5pt}}%
-    \rule{\linewidth}{1.5pt}}%
+    \makebox[0pt][l]{\rule[.15\baselineskip]{\linewidth}{0.75pt}}%
+    \rule{\linewidth}{0.75pt}}%
   \fi}
 \renewpagestyle{plain}{
-\sethead{}{\raisebox{.65\baselineskip}{\songti \wuhao \ifisanon{~}\else{国防科技大学\@optionpaperclass{}毕业论文}\fi}}{}%
+\sethead{}{\raisebox{.4\baselineskip}{\songti \wuhao \ifisanon{~}\else{国防科技大学\@optionpaperclass{}毕业论文}\fi}}{}%
 \setfoot{}{{\songti \wuhao 第~\thepage~页}}{}%
 \headrule%
 \footrule%
 }
-\setfootrule{1bp}
+\setfootrule{0.5bp}
 \renewcommand\frontmatter{%
     \if@openright\cleardoublepage\else\clearpage\fi
     \@mainmatterfalse
@@ -264,7 +266,7 @@
 \renewcommand\backmatter{%
     \if@openright\cleardoublepage\else\clearpage\fi
     \titleformat{\chapter}{\filcenter \heiti \sanhao}{附录\,\thechapter\,}{1em}{}
-    \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \heiti \xiaosi[1.25]}
+    \titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti \xiaosi[1.25]}
       {附录\,\thecontentslabel\quad}{}
       {\hspace{.5em}\titlerule*{.}\contentspage}
     \@mainmattertrue
@@ -278,21 +280,21 @@
   \vspace*{\fill}
   \clearpage\fi\fi%
 }
-\titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \heiti \xiaosi[1.25]}
-    {第{\thecontentslabel}章\quad}{}
-    {\hspace{.5em}\titlerule*{.}\contentspage}
+\titlecontents{chapter}[0pt]{\vspace{0.25\baselineskip} \songti \xiaosi[1.25]}
+    {第{\hzx\thecontentslabel}章\quad}{}
+    {\hspace{.5em}\titlerule*{\hzx…}\contentspage}
 \titlecontents{section}[2em]{\songti \xiaosi[1.25]}
-    {\thecontentslabel\quad}{}
-    {\hspace{.5em}\titlerule*{.}\contentspage}
+    {\hzx\thecontentslabel\quad}{}
+    {\hspace{.5em}\titlerule*{\hzx…}\contentspage}
 \titlecontents{subsection}[4em]{\songti \xiaosi[1.25]}
-    {\thecontentslabel\quad}{}
-    {\hspace{.5em}\titlerule*{.}\contentspage}
+    {\hzx\thecontentslabel\quad}{}
+    {\hspace{.5em}\titlerule*{\hzx…}\contentspage}
 \titlecontents{figure}[0pt]{\songti \xiaosi[1.25]}
     {\makebox[3.5em][l]{图~\thecontentslabel\quad}}{}
-    {\hspace{.5em}\titlerule*{.}\contentspage}
+    {\hspace{.5em}\titlerule*{\hzx…}\contentspage}
 \titlecontents{table}[0pt]{\songti \xiaosi[1.25]}
     {\makebox[3.5em][l]{表~\thecontentslabel\quad}}{}
-    {\hspace{.5em}\titlerule*{.}\contentspage}
+    {\hspace{.5em}\titlerule*{\hzx…}\contentspage}
 \renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
                     \thispagestyle{plain}%
                     \global\@topnum\z@
@@ -327,14 +329,14 @@
 \newcommand\ekeywordsname{KEY WORDS}
 \newcommand\ekeywords[1]{\xiaosi \textbf{\ekeywordsname:} #1}
 \newenvironment{cabstract}{%
-    \chapter{\cabstractname}
-    % \addcontentsline{toc}{chapter}{摘要}
+    \chapter*{\cabstractname}
+    \addcontentsline{toc}{chapter}{摘要}
     \xiaosi
     \@afterheading}
     {\par\vspace{2em}\par}
 \newenvironment{eabstract}{%
-    \chapter{\textbf{\eabstractname}}
-    % \addcontentsline{toc}{chapter}{\textsf{\eabstractname}}
+    \chapter*{\textbf{\eabstractname}}
+    \addcontentsline{toc}{chapter}{\hzx{ABSTRACT}}
     \xiaosi
     \@afterheading}
     {\par\vspace{2em}\par}

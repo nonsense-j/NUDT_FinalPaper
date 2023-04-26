@@ -8,22 +8,15 @@ provided by nonsense(2018 Software Engineering).
 xelatex + bibtex + xelatex*2
 ```
 
-# 依赖的字体
+# Update
+provided by Vincent
 
-使用此模板需要下载安装配套字体：
+基于2023年论文模版，提供了部分的修改
 
-+ [ttf字体下载(Windows字体，与Word一致)](https://github.com/TomHeaven/nudt_thesis/releases/download/v1.1/ttf.zip)
-使用ttf需要修改入口thesis.tex / thesis_blind.tex，确保documentclass的字体参数为
-
-```
-\documentclass[doctor,ttf]{nudtpaper}   % ttf字体
-```
-注意Windows 10系统安装字体`不要双击字体安装`，这样只会为当前用户安装字体，latex可能还是无法找到字体。要右击字体文件，选`为所有用户安装字体`。
-
+支持字体的自动载入。
 
 # 用法
 论文不包括封面，封面做好拼接进来即可。
-
 
 
 # 参考文献类别
