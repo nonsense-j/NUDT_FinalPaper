@@ -106,7 +106,7 @@
     \setCJKfamilyfont{song}[Path=font/]{SimSun.ttc}
     \setCJKfamilyfont{hei}[Path=font/]{SimHei.ttf}
     \setCJKfamilyfont{fs}[Path=font/]{FangSong_GB2312.ttf} % fang-song
-    \setCJKfamilyfont{kai}{KaiTi} % Kai
+    \setCJKfamilyfont{kai}[Path=font/]{simkai.ttf} % Kai
     \setCJKfamilyfont{times}{Times New Roman} % times
 }
 
@@ -348,16 +348,16 @@
 \setcounter{secnumdepth}{3}
 \setlength{\footnotesep}{2.2ex \@minus 2bp}
 \titleformat{\chapter}{\filcenter\sf \heiti\sanhao[1.25]}{第{\thechapter}章\,}{1em}{}
-\titleformat{\section}{\bfseries \heiti\sihao[1.25]}{\thesection}{1em}{}
-\titleformat{\subsection}{\bfseries \heiti\xiaosi[1.25]}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\bfseries \heiti\xiaosi[1.25]}{\thesubsubsection}{1em}{}
-\titlespacing{\chapter}{0pt}{2.4ex-\topskip-\heightof{A}}{2.4ex \@minus 2bp}
-\titlespacing{\section}{0pt}{2ex-\heightof{a}}{2ex \@minus 2bp}
-\titlespacing{\subsection}{0pt}{2ex \@minus 2bp}{2ex \@minus 2bp}
+\titleformat{\section}{\bfseries\heiti\sihao[1.25]}{\textnormal\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\heiti\xiaosi[1.25]}{\textnormal\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bfseries\heiti\xiaosi[1.25]}{\textnormal\thesubsubsection}{1em}{}
+\titlespacing{\chapter}{0pt}{4ex-\topskip-\heightof{A}}{4ex \@minus 2bp}
+\titlespacing{\section}{0pt}{4ex-\heightof{a}}{4ex \@minus 2bp}
+\titlespacing{\subsection}{0pt}{1ex \@minus 2bp}{1ex \@minus 2bp}
 \titlespacing{\subsubsection}{0pt}{1ex \@minus 2bp}{1ex \@minus 2bp}
 \renewcommand\normalsize{%
 \@setfontsize\normalsize{12bp}{12.87bp}%
-\renewcommand{\baselinestretch}{1.3}%
+\renewcommand{\baselinestretch}{1.38}%
 \setlength\abovedisplayskip{10bp \@minus 1bp}%
 \setlength\abovedisplayshortskip{10bp \@minus 1bp}%
 \setlength\belowdisplayskip{\abovedisplayskip}%
@@ -470,7 +470,7 @@
 {\item[\hspace*{2em} \theorem@headerfont ##1\ ##2\ (##3)\theorem@separator]}
 \theoremstyle{plain}
 \theorembodyfont{\kai\xiaosi[1.3]}
-\theoremheaderfont{\hei\xiaosi[1.3]}
+\theoremheaderfont{\heiti\xiaosi[1.3]}
 \theoremsymbol{}
 \newtheorem{definition}{定义}[chapter]
 \newtheorem{lemma}{引理}[chapter]
